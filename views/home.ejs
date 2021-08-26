@@ -2,11 +2,18 @@
 
 <header>Stock Watchlist</header>
 <form id="add" method="POST" action="/add">
-    <div id="flex">
+    <div class="flex">
         <input id="name" type="text" name="name" placeholder="StockName"><br>
         <input id="code" type="text" name="code" placeholder="StockCode"><br>
         <input id="price" type="number" name="price" placeholder="StockPrice"><br>
         <input type="submit" value="Add" class="btn">
+    </div>
+</form>
+<form id="sort" method="POST" action="/sort">
+    <div class="flex">
+        <input id="order" type="text" name="order" placeholder="ascending/descending"><br>
+        <input id="field" type="text" name="field" placeholder="name/code/price"><br>
+        <input type="submit" value="Sort" class="btn">
     </div>
 </form>
     <table class="list">
