@@ -1,0 +1,35 @@
+<link href="/public/css/style.css" rel="stylesheet">
+
+<header>Stock Watchlist</header>
+<form id="add" method="POST" action="/add">
+    <div id="flex">
+        <input id="name" type="text" name="name" placeholder="StockName"><br>
+        <input id="code" type="text" name="code" placeholder="StockCode"><br>
+        <input id="price" type="number" name="price" placeholder="StockPrice"><br>
+        <input type="submit" value="Add" class="btn">
+    </div>
+</form>
+    <table class="list">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Code</td>
+                <td>Price</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <%if (result !='') { %>
+            <% for (var i = 0; i < result.length; i++) { %>
+                <tr>
+                    <td><%=result[i].name %></td>
+                    <td><%=result[i].code %></td>
+                    <td><%=result[i].price %></td>
+                    <td><a id="update" href="/update/<%= result[i].id%>">Update</a></td>
+                    <td><a id="delete" href="/delete/<%= result[i].id%>">Delete</a></td>
+                </tr>
+            <% } %>
+            <% } %>
+        </tbody>
+    </table>
