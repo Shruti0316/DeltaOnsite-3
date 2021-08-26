@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+header{
+    color: rgb(0, 238, 255);
+    font-family: "Lora";
+    font-size: 60px;
+    padding: 20px;
+    text-align: center;
+}
+#add{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#flex{
+    display: flex;
+    padding: 20px;
+}
+input{
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+#code,#price{
+    border-radius: 0px;
+}
+.btn{
+    border: 1px solid #00B4CC;
+    background-color: #00B4CC;
+    text-align: center;
+    color: whitesmoke;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.list{
+    border-collapse: collapse;
+    font-family: 'Lora', serif;
+    min-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.list thead tr {
+    background-image: linear-gradient(to right,rgb(182, 202, 0),rgb(201, 14, 207));
+    font-size: 20px;
+    color: white;
+    text-align: left;
+}
+.list  th,.list  td {
+    padding: 12px 15px;
+    font-size: 20px;
+}
+.list tbody{
+    background-image: linear-gradient(to right,rgb(201, 14, 207),rgb(182, 202, 0));
+}
+#delete{
+    color: red;
+    text-decoration: none;
+}
+#update{
+    color: blue;
+    text-decoration: none;
+}
