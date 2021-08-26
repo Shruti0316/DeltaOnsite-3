@@ -81,4 +81,37 @@ router.get("/delete/:id",(req,res) => {
         console.log(err);
     })
 })
+router.post("/sort",async(req,res) => {
+    var order= req.body.order;
+    var field = req.body.field;
+    if(order !=="ascending" || order !== "descending" || field !== "name" || field !== "code" || field !== "price"){
+        res.send("Enter valid values");
+    }
+    if(order === "ascending"){
+        if(field === "name" ){
+            var stock = await Stock.find().sort({name:1})
+            res.render("home.ejs",{result:stock});
+        }
+        else if(field === "code"){
+            var stock = await Stock.find().sort({code:1})
+            res.render("home.ejs",{result:stock});
+        }else{
+            var stock = await Stock.find().sort({price:1})
+            res.render("home.ejs",{result:stock});
+        }
+    }
+    else{
+        if(field === "name" ){
+            var stock = await Stock.find().sort({name:-1})
+            res.render("home.ejs",{result:stock});
+        }
+        else if(field === "code"){
+            var stock = await Stock.find().sort({code:-1})
+            res.render("home.ejs",{result:stock});
+        }else{
+            var stock = await Stock.find().sort({price:-1})
+            res.render("home.ejs",{result:stock});
+        }
+    }
+})
 module.exports = router;
